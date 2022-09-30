@@ -1,0 +1,39 @@
+<h1 align = 'center'>Publicaciones</h1>
+
+
+<!--Si el user es administrador-->
+<%if user_admin%>
+<p align = 'center'>
+<%= link_to 'create publication', new_publication_path %><br>
+</p>
+<%end%>
+
+<table align='center'>
+  <tr>
+    <thead>
+      <th>ID de publicacion</th>
+      <th>Nombre del club</th>
+      <th>Direccion del club</th>
+      <th>Deporte</th>
+      </thead>
+  </tr>
+    
+
+
+<% @publications.each do |publication| %>
+  <div>
+  <tr>
+  <td><%= publication.id %></td>
+  <td><%= publication.club_name %></td>
+  <td><%= publication.club_address %></td>
+  <td><%= publication.sport_name %></td>
+  <% if user_admin == false && user_moderator == false%>
+    <td><%= link_to 'reservar', create_pivot_path(:club_name => publication.club_name, :club_address => publication.club_address, :sport_name => publication.sport_name)  %></td>
+    
+  <%end%>
+  
+  </tr>
+    
+
+  </div>
+<% end %>
