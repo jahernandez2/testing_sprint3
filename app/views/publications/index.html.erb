@@ -27,9 +27,13 @@
   <td><%= publication.club_name %></td>
   <td><%= publication.club_address %></td>
   <td><%= publication.sport_name %></td>
+  
+  <% publication.reviews.each do |r| %>
+  <td><%= r.review %></td>
+  <% end %>
   <% if user_admin == false && user_moderator == false%>
     <td><%= link_to 'reservar', create_pivot_path(:club_name => publication.club_name, :club_address => publication.club_address, :sport_name => publication.sport_name)  %></td>
-    
+    <td><%= link_to 'review', new_review_path(:publication_id => publication.id)%></td> 
   <%end%>
   
   </tr>

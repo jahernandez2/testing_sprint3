@@ -1,5 +1,6 @@
 class Publication < ApplicationRecord
   belongs_to :user
+  has_many :reviews
   validates :club_name, presence: true, length: { in: 6..25 }
   validates :club_address, presence: true, length: { in: 6..30 }
   validates :sport_name, presence: true, length: { in: 1..20 }
