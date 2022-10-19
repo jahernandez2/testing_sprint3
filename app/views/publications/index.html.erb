@@ -15,6 +15,7 @@
       <th>Nombre del club</th>
       <th>Direccion del club</th>
       <th>Deporte</th>
+      <th>Review</th>
       </thead>
   </tr>
     
@@ -27,14 +28,13 @@
   <td><%= publication.club_name %></td>
   <td><%= publication.club_address %></td>
   <td><%= publication.sport_name %></td>
-  
+  <% publication.reviews.each do |r| %>
+    <%= r.review %>
+  <%end%>
   <% if user_admin == false && user_moderator == false%>
     <td><%= link_to 'reservar', create_pivot_path(:club_name => publication.club_name, :club_address => publication.club_address, :sport_name => publication.sport_name)  %></td>
     <td></td><%= link_to 'new_review', new_publication_review_path(publication) %></td>
   <%end%>
-  
   </tr>
-    
-
   </div>
 <% end %>
