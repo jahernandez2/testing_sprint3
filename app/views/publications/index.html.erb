@@ -1,40 +1,83 @@
 <h1 align = 'center'>Publicaciones</h1>
-
+<!-- Filter -->
+<div align = 'center' class="filters">
+  <%= link_to "Filter by All", publications_path()%>
+  <%= link_to "Cancha_1", publications_path(:club_name=>'Test_Cancha_1')%>
+  <%= link_to "Cancha_3", publications_path(:club_name=>'Test_Cancha_3')%>
+  <%= link_to "Cancha_4", publications_path(:club_name=>'Test_Cancha_4')%>
+</div>
 
 <!--Si el user es administrador-->
 <%if user_admin%>
-<p align = 'center'>
-<%= link_to 'create publication', new_publication_path %><br>
-</p>
+  <p align = 'center'>
+    <%= link_to 'create publication', new_publication_path %><br>
+  </p>
 <%end%>
+<div align = 'center'>
+  
+</div>
 
-<table align='center'>
-  <tr>
-    <thead>
+<table class='flat-table' align = 'center'>
+  <tbody>
+    <tr>
       <th>ID de publicacion</th>
       <th>Nombre del club</th>
       <th>Direccion del club</th>
       <th>Deporte</th>
-      <th>Review</th>
-      </thead>
-  </tr>
-    
+      <%if !user_admin%>
+        <th>Reservar</th>
+        <th>Review</th>
+        <th>Imagen</th>
+      <%end%>
+    </tr>
+    <% @publications.each do |publication| %>
+      <tr>
+
+        <td>
+          <%= publication.id %>
+        </td>
+
+        <td>
+
+          <%= publication.club_name %>
+        </td>
+
+        <td>
+
+          <%= publication.club_address %>
+        </td>
+
+        <td>
+
+          <%= publication.sport_name %>
+        </td>
+
+        <td>
+          <% if !user_admin && !user_moderator %>
+            <%= link_to 'reservar', create_pivot_path(:publication_id => publication.id,:club_name => publication.club_name, :club_address => publication.club_address, :sport_name => publication.sport_name)  %>
+          <% end %>
+        </td>
+
+        <td>
+          <% if Pivot.find_by(publication_id: publication.id)%>
+            <% if Pivot.find_by(publication_id: publication.id).user_id == current_user.id%>
+              <% for a in 1..publication&.reviews&.last&.review.to_i do%>
+                ★
+              <%end%>
+              <br>
+              <%= link_to 'reseña', new_publication_review_path(publication) %>
+            <%end%>
+          <%else%>
+            <h6>Reserva primero!</h6>
+          <%end%>
+        </td>
+
+        <td>
+          <img src="<%= rails_blob_path(publication.image)%>" alt="image_alter">
+        </td>
 
 
-<% @publications.each do |publication| %>
-  <div>
-  <tr>
-  <td><%= publication.id %></td>
-  <td><%= publication.club_name %></td>
-  <td><%= publication.club_address %></td>
-  <td><%= publication.sport_name %></td>
-  <% publication.reviews.each do |r| %>
-    <%= r.review %>
-  <%end%>
-  <% if user_admin == false && user_moderator == false%>
-    <td><%= link_to 'reservar', create_pivot_path(:club_name => publication.club_name, :club_address => publication.club_address, :sport_name => publication.sport_name)  %></td>
-    <td></td><%= link_to 'new_review', new_publication_review_path(publication) %></td>
-  <%end%>
-  </tr>
-  </div>
-<% end %>
+      </tr>
+    <% end %>
+  </tbody>
+	</table>

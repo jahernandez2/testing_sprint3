@@ -14,7 +14,7 @@ class PivotsController < ApplicationController
   # GET /pivots/new
   def new
     @pivot = Pivot.new
-    # @exam = Pivot.find(params[:id])
+    session[:publication_id] = params[:publication_id]
   end
 
   # GET /pivots/1/edit
@@ -26,6 +26,7 @@ class PivotsController < ApplicationController
     @pivot = Pivot.new(pivot_params)
 
     @pivot.user_id = current_user.id
+    @pivot.publication_id = session[:publication_id]
     @pivot.moderador_id = User.where(moderator: true).offset(@user_moderator_id).first.id
 
     respond_to do |format|

@@ -1,6 +1,6 @@
 <h1>this is the review form</h1>
 <%= form_for [@publication, @review] do |f| %>
     <%= f.label :review %>
-    <%= f.text_field :review %>
+    <%= f.select :review, [ '1','2', '3','4','5']%>
     <%= f.submit %>
 <% end %>

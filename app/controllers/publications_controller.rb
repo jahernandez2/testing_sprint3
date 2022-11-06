@@ -1,6 +1,10 @@
 class PublicationsController < ApplicationController
   def index
-    @publications = Publication.all
+    if params[:club_name]
+      @publications = Publication.where(:club_name => params[:club_name])
+    else
+      @publications = Publication.all
+    end
   end
 
   def new
@@ -24,6 +28,6 @@ class PublicationsController < ApplicationController
   private
 
   def publications_params
-    params.require(:publication).permit(:club_name, :club_address, :sport_name)
+    params.require(:publication).permit(:club_name, :club_address, :sport_name, :image)
   end
 end
