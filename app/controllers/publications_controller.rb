@@ -14,7 +14,15 @@ class PublicationsController < ApplicationController
   def show
     @publication = Publication.find(params[:id])
   end
+  def destroy
+    @publication = Publication.find(params[:id])
+    @publication.destroy
 
+    respond_to do |format|
+      format.html { redirect_to publications_url, notice: 'Publication was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
   def create
     @publication = Publication.new(publications_params)
     @publication.user_id = current_user.id

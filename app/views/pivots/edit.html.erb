@@ -21,12 +21,7 @@
         <%= f.select :status, [ 'pending', 'accepted', 'denied'], :prompt => 'Select One' %><br>
     </div>
     <% end %>
-    <% if current_user.moderator == false %>
 
-    <div>
-        <%= f.select :status, [ 'pending', 'denied'], :prompt => 'Select One' %><br>
-    </div>
-    <% end %>
     
     
     
@@ -40,3 +35,4 @@
 
 <% end %>
 <%= link_to 'Back', pivots_path %>
+
