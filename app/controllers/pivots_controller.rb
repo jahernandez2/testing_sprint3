@@ -14,7 +14,7 @@ class PivotsController < ApplicationController
   # GET /pivots/new
   def new
     @pivot = Pivot.new
-    session[:publication_id] = params[:publication_id]
+    # @exam = Pivot.find(params[:id])
   end
 
   # GET /pivots/1/edit
@@ -26,7 +26,6 @@ class PivotsController < ApplicationController
     @pivot = Pivot.new(pivot_params)
 
     @pivot.user_id = current_user.id
-    @pivot.publication_id = session[:publication_id]
     @pivot.moderador_id = User.where(moderator: true).offset(@user_moderator_id).first.id
 
     respond_to do |format|
@@ -75,3 +74,4 @@ class PivotsController < ApplicationController
     params.require(:pivot).permit(:club_name, :sport_name, :club_address, :status)
   end
 end
+

@@ -65,6 +65,9 @@
           <%else%>
             <h6>Reserva primero!</h6>
           <%end%>
+          <% if user_admin == true%>
+          <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%end%>
         </td>
 
         <td>
