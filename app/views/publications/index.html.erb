@@ -58,14 +58,10 @@
         </td>
 
         <td>
-          <% if Pivot.find_by(publication_id: publication.id)%>
-            <% if Pivot.find_by(publication_id: publication.id).user_id == current_user.id%>
-              <% for a in 1..publication&.reviews&.last&.review.to_i do%>
-                ★
-              <%end%>
-              <br>
-              <%= link_to 'reseña', new_publication_review_path(publication) %>
-            <%end%>
+          <%=promedio(publication.id)%>
+          <%if User.find(current_user.id).pivots.pluck(:publication_id).include?(publication.id)%>
+            <br>
+            <%= link_to 'reseña', new_publication_review_path(publication) %>
           <%else%>
             <h6>Reserva primero!</h6>
           <%end%>
