@@ -1,11 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-<<<<<<< HEAD
-ruby '3.1.2'
-=======
-ruby '2.6.0'
->>>>>>> 5f3465fab5edc58c00fea750faadc636dd424a6a
+
+ruby '2.6.6'
+
 
 gem 'dotenv-rails', groups: [:development, :test]
 
