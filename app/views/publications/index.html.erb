@@ -2,9 +2,9 @@
 <!-- Filter -->
 <div align = 'center' class="filters">
   <%= link_to "Filter by All", publications_path()%>
-  <%= link_to "Cancha_1", publications_path(:club_name=>'Test_Cancha_1')%>
-  <%= link_to "Cancha_3", publications_path(:club_name=>'Test_Cancha_3')%>
-  <%= link_to "Cancha_4", publications_path(:club_name=>'Test_Cancha_4')%>
+  <%= link_to "Padel", publications_path(:sport_name=>'Padel')%>
+  <%= link_to "Tenis", publications_path(:sport_name=>'Tenis')%>
+  <%= link_to "Futbol", publications_path(:sport_name=>'Futbol')%>
 </div>
 
 <!--Si el user es administrador-->

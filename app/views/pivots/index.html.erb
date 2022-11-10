@@ -19,15 +19,17 @@
   <tbody>
     <% @pivots.each do |pivot| %>
       <div>
-      <%if current_user.id == pivot.user_id%>
+      <%if current_user.id == pivot.user_id || current_user.id == pivot.moderador_id%>
       <tr>
       <td><%= pivot.user.email%></td>
       <td><%= pivot.club_name%></td>
       <td><%= pivot.club_address%></td>
       <td><%= pivot.sport_name%></td>
       <td><%= pivot.status%></td>
-      <td><%= link_to 'Destroy', pivot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Eliminar Reserva', pivot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%if current_user.moderator == true%>
       <td><%= link_to 'Editar Status', edit_pivot_path(pivot)%></td>
+      <% end %>
       <td><%= link_to 'Enviar Mensaje', new_response_path(:user_id => pivot.user_id, :user_moderator => pivot.moderador_id)  %></td>
       </tr>
       </div> 
