@@ -78,7 +78,7 @@
 
         <td>
           
-          <img src="<%= rails_blob_path(publication.image)%>" alt="image_alter">
+          <img src="<%=publication.imageurl%>" alt="image_alter">
         </td>
         <% if user_admin == true%>
           <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
