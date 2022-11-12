@@ -1,28 +1,36 @@
+<%= stylesheet_link_tag "publication.css" %>
+
+<body>
+  <section class="form-login">
+
 <h1>Create Publication</h1>
 
 <%= form_with scope: :publication, url: publications_path, local: false do |f| %>
 
     <div>
       <%= f.label :club_name %>
-      <%= f.text_field :club_name %>
+      <%= f.text_field :club_name, :class => "field_2"%>
     </div>
 
     <div>
       <%= f.label :club_address %>
-      <%= f.text_field :club_address %>
+      <%= f.text_field :club_address, :class => "field_2" %>
     </div>
 
     <div>
       <%= f.label :sport_name %>
-      <%= f.text_field :sport_name %>
+      <%= f.text_field :sport_name, :class => "field_2"%>
     </div>
 
     <div>
-      <%= f.file_field :image %>
+      <%= f.file_field :image%>
     </div>
 
     <div>
       <%= f.submit %>
     </div>
+
+  </section>
+</body>
 
 <% end %>

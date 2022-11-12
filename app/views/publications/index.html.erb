@@ -1,7 +1,7 @@
 <h1 align = 'center'>Publicaciones</h1>
 <!-- Filter -->
 <div align = 'center' class="filters">
-  <%= link_to "Filter by All", publications_path()%>
+  <%= link_to "Todos los deportes", publications_path()%>
   <%= link_to "Padel", publications_path(:sport_name=>'Padel')%>
   <%= link_to "Tenis", publications_path(:sport_name=>'Tenis')%>
   <%= link_to "Futbol", publications_path(:sport_name=>'Futbol')%>
@@ -9,7 +9,7 @@
 
 <!--Si el user es administrador-->
 <%if user_admin%>
-  <p align = 'center'>
+  <p align = 'center' >
     <%= link_to 'create publication', new_publication_path %><br>
   </p>
 <%end%>
@@ -25,10 +25,14 @@
       <th>Direccion del club</th>
       <th>Deporte</th>
       <%if !user_admin%>
-        <th>Reservar</th>
-        <th>Review</th>
-        <th>Imagen</th>
+        <th>Reservar</th> 
       <%end%>
+      <th>Review</th> 
+      <th>Imagen</th>
+      <%if user_admin%>
+        <th>Eliminar Publicacion</th>
+      <%end%>
+      
     </tr>
     <% @publications.each do |publication| %>
       <tr>
@@ -51,29 +55,35 @@
           <%= publication.sport_name %>
         </td>
 
-        <td>
+        
           <% if !user_admin && !user_moderator %>
-            <%= link_to 'reservar', create_pivot_path(:publication_id => publication.id,:club_name => publication.club_name, :club_address => publication.club_address, :sport_name => publication.sport_name)  %>
+            <td>
+            <%= link_to 'Reservar', create_pivot_path(:publication_id => publication.id,:club_name => publication.club_name, :club_address => publication.club_address, :sport_name => publication.sport_name)  %>
+            </td>
           <% end %>
+        
+        
+        
+       
+        <td>
+          <%=promedio(publication.id)%>
+          
+            <br>
+            <%= link_to 'Reseñas', new_publication_review_path(publication) %>
+          
+            
+    
+        
         </td>
 
         <td>
-          <%=promedio(publication.id)%>
-          <%if User.find(current_user.id).pivots.pluck(:publication_id).include?(publication.id)%>
-            <br>
-            <%= link_to 'reseña', new_publication_review_path(publication) %>
-          <%else%>
-            <h6>Reserva primero!</h6>
-          <%end%>
-          <% if user_admin == true%>
+          
+          <img src="<%= rails_blob_path(publication.image)%>" alt="image_alter">
+        </td>
+        <% if user_admin == true%>
           <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <%end%>
         </td>
-
-        <td>
-          <img src="<%= rails_blob_path(publication.image)%>" alt="image_alter">
-        </td>
-        
       </tr>
     <% end %>
   </tbody>

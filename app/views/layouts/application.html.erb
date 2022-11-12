@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>EasyCancha</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,8 +12,13 @@
   </head>
   
   <body>
+          
+    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <font 
+            color="white">
+      
     <%if user_signed_in?%>
       <%if current_user.moderator%>
         Tipo: Moderador
@@ -21,7 +27,9 @@
         <%elsif  current_user%>
         Tipo: Usuario
       <%end%>
-    <%end%><br>
+    <%end%>
+    </font>
+    <br>
     <% if user_signed_in? %>
       <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
       <%= link_to 'Edit User', edit_user_registration_path%>
@@ -38,5 +46,6 @@
       <%=link_to 'Bandeja de Entrada', responses_path%>
     <%end%>
     <%= yield %>
+    
   </body>
 </html>

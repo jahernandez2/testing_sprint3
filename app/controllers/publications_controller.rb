@@ -1,7 +1,7 @@
 class PublicationsController < ApplicationController
   def index
-    if params[:club_name]
-      @publications = Publication.where(:club_name => params[:club_name])
+    if params[:sport_name]
+      @publications = Publication.where(:sport_name => params[:sport_name])
     else
       @publications = Publication.all
     end

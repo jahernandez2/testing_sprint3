@@ -7,9 +7,12 @@
     font-size: 115%;
     overflow: auto;
     width: auto;
+    background: #4e4d4d;
+    box-shadow: 7px 13px 37px #000;
+    border-top: 4px solid #d95e06;
     
     th {
-      background-color: rgb(112, 196, 105);
+      background-color: #d95e06;
       color: white;
       font-weight: normal;
       padding: 20px 30px;
@@ -31,4 +34,8 @@ img{
     justify-content: space-around;
     width: 50%;
     margin: 0 auto;
+    color: white;
+    background: #4e4d4d;
+    box-shadow: 7px 13px 37px #000;
+    border-top: 4px solid #d95e06;
 }
