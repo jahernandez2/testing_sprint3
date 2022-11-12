@@ -7,7 +7,7 @@
 
 <h1>Create Publication</h1>
 
-<%= form_with model: @publication, url: publications_path do |f| %>
+<%= form_with scope: :publication, url: publications_path, local: false do |f| %>
 
     <div>
       <%= f.label :club_name %>
@@ -25,9 +25,9 @@
     </div>
 
     <div>
-   
+    <%= f.file_field :image%>
 
-    <%= f.hidden_field :image, class: "simple-file-upload" %>
+   
     </div>
 
     <div>

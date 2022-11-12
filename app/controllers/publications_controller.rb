@@ -36,6 +36,6 @@ class PublicationsController < ApplicationController
   private
 
   def publications_params
-    params.require(:publication).permit(:club_name, :club_address, :sport_name)
+    params.require(:publication).permit(:club_name, :club_address, :sport_name, :image)
   end
 end
