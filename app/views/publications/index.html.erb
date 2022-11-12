@@ -24,7 +24,7 @@
       <th>Nombre del club</th>
       <th>Direccion del club</th>
       <th>Deporte</th>
-      <%if !user_admin%>
+      <%if !user_admin && !user_moderator%>
         <th>Reservar</th> 
       <%end%>
       <th>Review</th> 

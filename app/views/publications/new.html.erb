@@ -1,5 +1,7 @@
 <%= stylesheet_link_tag "publication.css" %>
-
+<head>
+<script src="https://app.simplefileupload.com/buckets/2d462710b51dea42e9d00d49a1657f00.js"></script>
+<\head>
 <body>
   <section class="form-login">
 
@@ -23,7 +25,9 @@
     </div>
 
     <div>
-      <%= f.file_field :image%>
+   
+
+    <%= f.hidden_field :image, class: "simple-file-upload" %>
     </div>
 
     <div>
