@@ -20,13 +20,10 @@
             color="white">
       
     <%if user_signed_in?%>
-      <%if current_user.moderator%>
-        Tipo: Moderador
-        <%elsif  current_user.admin%>
-        Tipo: Administrador
-        <%elsif  current_user%>
-        Tipo: Usuario
-      <%end%>
+      
+        Nombre: <%=current_user.name%>
+        
+      
     <%end%>
     </font>
     <br>

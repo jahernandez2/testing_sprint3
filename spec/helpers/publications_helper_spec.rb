@@ -10,6 +10,11 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe ReviewsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe PublicationsHelper, type: :helper do
+    describe '#promedio' do
+    it 'averages numbers' do
+      expect(helper).to receive(:link_to).with('foo', 'bar')
+      helper.promedio
+    end
+  end
 end

@@ -2,10 +2,14 @@ require 'rails_helper'
 RSpec.describe Publication, type: :model do
   # tests go here
   subject do
-    Publication.new(club_name: 'Club pato cornejo', club_address: 'Raul Labbe', sport_name: 'Tenis', user_id: 3)
+    Publication.new(club_name: 'Club pato cornejo', club_address: 'Raul Labbe', sport_name: 'Tenis', user_id: 3, imageurl: '/Users/francescorodriguez/Downloads/tenis.jpg')
   end
   it 'club name should be present' do
     subject.club_name = nil
+    expect(subject).to_not be_valid
+  end
+  it 'imageurl should be present' do
+    subject.imageurl = nil
     expect(subject).to_not be_valid
   end
   it 'club address should be present' do

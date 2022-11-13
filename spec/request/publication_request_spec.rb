@@ -10,7 +10,7 @@ class PublicationControllerTest < ActiveSupport::TestCase
       end
     end
 
-    describe 'end' do
+    describe 'new' do
       it 'should return a successful response' do
         get '/publications/new'
         expect(response).to have_http_status(302)

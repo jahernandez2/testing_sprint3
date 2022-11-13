@@ -13,6 +13,11 @@
       <th> Direccion </th>
       <th> Deporte </th>
       <th> Status </th>
+      <th> Boton Eliminar </th>
+      <%if current_user.moderator == true%>
+      <th> Boton Status </th>
+      <% end %>
+      <th> Boton Mensaje </th>
     </tr>
   </thead>
 
