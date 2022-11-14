@@ -52,10 +52,10 @@
         "lines": [
           1,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -75,54 +75,6 @@
           null
         ]
       },
-      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/models/pivot.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/models/publication.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/models/review.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/models/message.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/controllers/messages_controller.rb": {
         "lines": [
           1,
@@ -130,7 +82,7 @@
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           null,
@@ -138,7 +90,7 @@
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           null,
@@ -146,25 +98,12 @@
           null,
           null,
           1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
+          1,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
+          2,
+          1,
           null,
           0,
           0,
@@ -175,6 +114,19 @@
           null,
           1,
           0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
           null,
           0,
           0,
@@ -186,7 +138,7 @@
           null,
           null,
           1,
-          0,
+          2,
           null,
           null,
           null,
@@ -202,27 +154,38 @@
           null,
           1,
           null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/controllers/pivots_controller.rb": {
+      "/home/anyelopetit/Projects/software_sprint1/app/controllers/pivots_controller.rb": {
         "lines": [
           1,
           1,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           null,
@@ -231,16 +194,16 @@
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
-          0,
-          0,
+          1,
+          1,
           null,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          2,
+          1,
           null,
           0,
           0,
@@ -408,34 +371,6 @@
           null
         ]
       },
-      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/models/response.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/models/request.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -487,6 +422,16 @@
         "branches": {
         }
       },
+      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -497,7 +442,7 @@
         "branches": {
         }
       },
-      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/channels/application_cable/channel.rb": {
+      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -506,8 +451,26 @@
         ],
         "branches": {
         }
+      },
+      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/models/request.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/francescorodriguez/Desktop/SPRINT3_con_front/software_sprint1/app/models/response.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1668358548
+    "timestamp": 1668393298
   }
 }

@@ -1,6 +1,7 @@
 class Pivot < ApplicationRecord
   has_many :messages
   belongs_to :user
+  belongs_to :publication
   scope :with_juice, -> { 'hello' }
 
   validates :club_name, presence: true, length: { in: 6..25 }

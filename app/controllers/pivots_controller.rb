@@ -71,7 +71,7 @@ class PivotsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def pivot_params
-    params.require(:pivot).permit(:club_name, :sport_name, :club_address, :status)
+    params.require(:pivot).permit(:club_name, :sport_name, :club_address, :status, :publication_id)
   end
 end
 
